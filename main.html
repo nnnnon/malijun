@@ -1,0 +1,37 @@
+<h1>吼一声</h1>
+
+
+
+<form action='' method="POST" accept-charset="utf-8">
+
+<p VLIGN="TOP">信息：<div><textarea cols="50" rows="10" id="message" name="message" 
+style="border:1px solid #888888;LINE-HEIGHT:18px;padding:3px;">
+</textarea>
+</div>
+</p>
+<p>发布人:<input id="who" name="who" value="" type="text" 
+style="background:transparent;border:1px solid #eeefff"></p>
+<p><input type="submit" value="提交"></p>
+
+
+{%for shout in shouts %}
+<div style="background-color:#eee;border:1px solid #333; ">{{shout.message}}
+
+</div>
+<div>
+    {% ifequal shout.who None %}
+         为匿名发布信息
+    {% else %}
+        由<I>{{shout.who}}</I>发布！
+    {% endifequal %}
+
+
+
+</div>
+{%endfor%}
+
+
+
+
+
+</form>
