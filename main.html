@@ -1,7 +1,9 @@
+
+
+<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+<body>
 <h1>吼一声</h1>
-
-
-
+<a href="{{ url }}">{{ url_linktext }}</a>
 <form action='' method="POST" accept-charset="utf-8">
 
 <p VLIGN="TOP">信息：<div><textarea cols="50" rows="10" id="message" name="message" 
@@ -9,23 +11,25 @@ style="border:1px solid #888888;LINE-HEIGHT:18px;padding:3px;">
 </textarea>
 </div>
 </p>
-<p>发布人:<input id="who" name="who" value="" type="text" 
+<!--  <p>发布人:<input id="who" name="who" value="" type="text" 
 style="background:transparent;border:1px solid #eeefff"></p>
+-->
 <p><input type="submit" value="提交"></p>
 
 
 {%for shout in shouts %}
-<div style="background-color:#eee;border:1px solid #333; ">{{shout.message}}
+<div class="msg">
+<blockquote>{{shout.message|escape|linebreaks}}</blockquote>
 
 </div>
 <div>
-    {% ifequal shout.who None %}
-         为匿名发布信息
+    {% if shout.author %}
+      <b>{{ shout.author.nickname }}</b> wrote.
     {% else %}
-        由<I>{{shout.who}}</I>发布！
-    {% endifequal %}
+     An anonymous person wrote.
+    {% endif %}
 
-
+{{ shout.modify_time}}
 
 </div>
 {%endfor%}
@@ -35,3 +39,5 @@ style="background:transparent;border:1px solid #eeefff"></p>
 
 
 </form>
+
+</body>

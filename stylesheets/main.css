@@ -1,0 +1,10 @@
+body {
+ font-family: Verdana, Helvetica, sans-serif;
+ background-color: #DDDDDD;
+font-size:12px;
+}
+.msg {
+    font-size: 12px;
+    background-color:#eed;
+    border:1px solid #333;
+}
