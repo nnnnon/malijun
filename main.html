@@ -4,11 +4,13 @@
 <body>
 <h1>吼一声</h1>
 <a href="{{ url }}">{{ url_linktext }}</a>
-<form action='' method="POST" accept-charset="utf-8">
+<form action='' method="POST" enctype="multipart/form-data">
 
 <p VLIGN="TOP">信息：<div><textarea cols="50" rows="10" id="message" name="message" 
 style="border:1px solid #888888;LINE-HEIGHT:18px;padding:3px;">
 </textarea>
+<div><label>Avatar:</label></div>
+<div><input type="file" name="img"/></div>
 </div>
 </p>
 <!--  <p>发布人:<input id="who" name="who" value="" type="text" 
@@ -19,9 +21,16 @@ style="background:transparent;border:1px solid #eeefff"></p>
 
 {%for shout in shouts %}
 <div class="msg">
-<blockquote>{{shout.message|escape|linebreaks}}</blockquote>
+<blockquote>
+{% if  shout.avatar  %}
+      <img src='img?img_id={{shout.pic_key}}'></img>
+{% endif %}
+{{shout.message|escape|linebreaks}}
+
+</blockquote>
 
 </div>
+
 <div>
     {% if shout.author %}
       <b>{{ shout.author.nickname }}</b> wrote.
