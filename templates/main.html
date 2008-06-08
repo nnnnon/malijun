@@ -1,6 +1,7 @@
 
 
-<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+<link href="/static/stylesheets/main.css" rel="stylesheet" type="text/css" />
+<script src="/static/javascripts/shout.js" type="text/javascript"></script>
 <body>
 <h1>吼一声</h1>
 <a href="{{ url }}">{{ url_linktext }}</a>
@@ -23,7 +24,8 @@ style="background:transparent;border:1px solid #eeefff"></p>
 <div class="msg">
 <blockquote>
 {% if  shout.avatar  %}
-      <img src='img?img_id={{shout.pic_key}}'></img>
+      <a href="img?img_id={{shout.pic_key}}">
+    <img  alt= "图像" src='img?img_id={{shout.pic_key}}' height="100" width="200" sytle="boder:0"></img></a>
 {% endif %}
 {{shout.message|escape|linebreaks}}
 
@@ -39,11 +41,13 @@ style="background:transparent;border:1px solid #eeefff"></p>
     {% endif %}
 
 {{ shout.modify_time}}
-
+<a href="javascript:confirmDelete('/delete/{{shout.key}}?p={{currpage}}');">Delete</a>
 </div>
 {%endfor%}
 
-
+<div style="text-align:center">
+{{pagestr}}
+</div>
 
 
 

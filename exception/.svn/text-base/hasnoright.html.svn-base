@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Yongboy's Tiny blog</title>
+<link href="/style/style.css" rel="stylesheet" type="text/css" />
+<script src="/script/blog.js" type="text/javascript"></script>
+</head>
+<body> 
+
+<div class="blogTop">
+<span><a href="">Yongboy's Tiny blog</a></span>
+<div>Just One Google App Engine Demo </div>
+</div>
+
+<div style="float:right;"><a href="/">Home</a></div>
+     <div class="fdiv">
+		<div style="color:#777;float:left;"></div>		
+	</div>
+    <div>
+    <h3>You have the right do handle it~</h3>
+    </div>
+    <div>
+      <p>NOTE:<br>
+        1.Anybody who has the Google's Account and has logined has the right to write the blog<br>
+        2.Anybody who writes the blog has the right do delete/edit it<br>
+        3.The anonymous person only view the blog </p>
+    </div>
+<div align="center">
+<br />
+<hr class="footHr" />
+Copyright By <a href="mailto:yongboy@gmail.com">Yongboy</a> !</div>
+</body>
+</html>
